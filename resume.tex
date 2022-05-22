@@ -11,7 +11,7 @@
 \usepackage{fancyhdr}
 \usepackage{setspace}
 \usepackage{fontspec}
- 
+
 \setmainfont{Times New Roman}
 \pagestyle{fancy}
 
@@ -32,6 +32,10 @@
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
+
+\newenvironment{bulletlist}
+{ \begin{itemize}\setlength{\itemsep}{0pt}
+} { \end{itemize} }
 
 \titleformat{\section}{
     \vspace{-4pt}\scshape\raggedright\large\bfseries
