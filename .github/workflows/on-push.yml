@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Install lualatex
         run: |
-          apt-get install -y texlive-full lualatex
+          sudo apt-get install -y texlive-full lualatex
       - name: Build document
         run: |
           make all
