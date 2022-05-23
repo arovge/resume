@@ -9,9 +9,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Install lualatex
+      - name: Install texlive
         run: |
-          sudo apt-get install -y texlive-full lualatex
+          sudo apt-get install -y texlive-full
       - name: Build document
         run: |
           make all
