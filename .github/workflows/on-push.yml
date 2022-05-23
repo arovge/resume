@@ -12,4 +12,4 @@ jobs:
       - name: Build document
         uses: dante-ev/latex-action@2021-A
         with:
-          entrypoint: make all
+          entrypoint: ./build.sh
