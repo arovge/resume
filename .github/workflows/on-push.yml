@@ -1,0 +1,15 @@
+name: Build Resume
+on:
+  push
+
+jobs:
+  build:
+    name: Build Resume
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Build document
+        uses: dante-ev/latex-action@2021-A
+        with:
+          entrypoint: make all
