@@ -2,6 +2,10 @@
 
 My resume as code
 
+### How parsable is this for an ATS (applicant tracking system)?
+
+No clue. Hopefully parseable, otherwise I wasted a lot of time on this. I'll update when I start using it.
+
 ### Local Development
 
 Make sure you have LaTeX dependencies installed as well as the LuaTeX engine. The resume uses `FreeSerif` as its font so `GNU FreeFont` should also be installed.
