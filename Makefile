@@ -1,6 +1,5 @@
 DEPS = main.tex header.tex skills.tex experience.tex education.tex projects.tex
 PDF = austin-rovge-resume
-OUT = out
 
 all: $(PDF)
 
