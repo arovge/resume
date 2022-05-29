@@ -1,5 +1,6 @@
 DEPS = main.tex header.tex skills.tex experience.tex education.tex projects.tex
-PDF = resume
+PDF = austin-rovge-resume
+OUT = out
 
 all: $(PDF)
 
@@ -13,3 +14,4 @@ clean:
 	rm -f *.aux
 	rm -f *.out
 	rm -f *.pdf
+	rm -rf $(OUT)
