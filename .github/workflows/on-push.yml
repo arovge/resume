@@ -55,4 +55,4 @@ jobs:
           issue-number: ${{ github.event.issue.number }}
           body: |
             Commit: $SHA
-            https://api.ajr.dev/files/austin-rovge-resume-${{ github.event.number }}.pdf
+            $URL
