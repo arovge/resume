@@ -18,8 +18,7 @@ jobs:
           make all
       - id: upload_assets_r2
         env:
-          PR_ID: ${{ github.event.number }}
           API_KEY: ${{ secrets.API_KEY }}
-          URL: https://api.ajr.dev/files/austin-rovge-resume-'${{ PR_ID }}'.pdf
+          URL: https://api.ajr.dev/files/austin-rovge-resume-'${{ github.event.number }}'.pdf
         run: |
-          curl '$url' -s -o /dev/null -f -X DELETE -H 'X-API-Key: '$API_KEY''  -H 'Content-Type: document' --data-binary @austin-rovge-resume.pdf
+          curl '$url' -s -o /dev/null -f -X DELETE -H 'X-API-Key: '$API_KEY''

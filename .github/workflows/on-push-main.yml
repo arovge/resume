@@ -1,0 +1,19 @@
+name: Build
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install deps
+        run: |
+          sudo apt-get install -y texlive texlive-luatex texlive-latex-extra fonts-freefont-ttf
+      - name: Make
+        run: |
+          make all

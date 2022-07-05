@@ -1,10 +1,6 @@
 name: Build
 on:
-  push:
-    branches:
-      - '*'
-    tags-ignore:
-      - '*'
+  pull_request
 
 jobs:
   build:
@@ -25,7 +21,6 @@ jobs:
           path: austin-rovge-resume.pdf
   upload_pr_pdf_to_r2:
     name: Upload PR PDF
-    if: github.event.issue.pull_request
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -37,7 +32,7 @@ jobs:
           API_KEY: ${{ secrets.API_KEY }}
           URL: https://api.ajr.dev/files/austin-rovge-resume-'${{ github.event.number }}'.pdf
         run: |
-          curl '$url' -s -o /dev/null -f -X PUT -H 'X-API-Key: '$API_KEY''  -H 'Content-Type: document' --data-binary @austin-rovge-resume.pdf
+          curl '$url' -s -o /dev/null -f -X PUT -H 'X-API-Key: '$API_KEY'' -H 'Content-Type: document' --data-binary @austin-rovge-resume.pdf
   add_link_to_pr_comment:
     name: Add comment
     needs: upload_pr_pdf_to_r2
