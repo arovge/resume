@@ -45,7 +45,7 @@ jobs:
           SHA: ${{ github.event.pull_request.head.sha }}
           URL: https://api.ajr.dev/files/austin-rovge-resume-${{ github.event.number }}.pdf
         with:
-          issue-number: ${{ github.event.issue.number }}
+          issue-number: ${{ github.event.number }}
           body: |
             Commit: $SHA
             $URL
