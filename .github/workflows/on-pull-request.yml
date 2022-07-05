@@ -41,17 +41,20 @@ jobs:
       URL: https://api.ajr.dev/files/austin-rovge-resume-${{ github.event.number }}.pdf
     runs-on: ubuntu-latest
     steps:
-      - name: Build comment
-        run: |
-          echo "Commit: $SHA" > output
-          echo "\n" >> output
-          echo $URL >> output
-      - name: Add remote link to PR comment
-        uses: peter-evans/create-or-update-comment@v1.4.5
-        continue-on-error: true
-        with:
-          issue-number: ${{ github.event.number }}
-          edit-mode: replace
-          body: |
-            Commit: ${{ github.event.pull_request.head.sha }}
+    - name: Find existing comment
+      uses: peter-evans/find-comment@v2
+      id: find_comment
+      with:
+        issue-number: ${{ github.event.number }}
+        comment-author: 'github-actions[bot]'
+    - name: Update/add comment with remote link
+      uses: peter-evans/create-or-update-comment@v2
+      continue-on-error: true
+      with:
+        comment-id: ${{ steps.find_comment.outputs.comment-id }}
+        issue-number: ${{ github.event.number }}
+        edit-mode: replace
+        body: |
+            Built for commit ${{ github.event.pull_request.head.sha }}
+
             https://api.ajr.dev/files/austin-rovge-resume-${{ github.event.number }}.pdf
