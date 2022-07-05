@@ -47,5 +47,5 @@ jobs:
         with:
           issue-number: ${{ github.event.number }}
           body: |
-            Commit: $SHA
-            $URL
+            Commit: ${{ SHA }}
+            ${{ URL }}
