@@ -14,7 +14,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Install deps
+        env:
+          DATA: ${{ github.event }}
         run: |
+          echo $DATA
+          exit 2
           sudo apt-get install -y texlive texlive-luatex texlive-latex-extra fonts-freefont-ttf
       - name: Make
         run: |
