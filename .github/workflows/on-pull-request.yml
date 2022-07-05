@@ -36,13 +36,23 @@ jobs:
   add_link_to_pr_comment:
     name: Add comment
     needs: upload_pr_pdf_to_r2
+    env:
+      SHA: ${{ github.event.pull_request.head.sha }}
+      URL: https://api.ajr.dev/files/austin-rovge-resume-${{ github.event.number }}.pdf
     runs-on: ubuntu-latest
     steps:
+      - name: Build comment
+        run: |
+          echo "Commit: $SHA" > output
+          echo "\n" >> output
+          echo $URL >> output
       - name: Add remote link to PR comment
         uses: peter-evans/create-or-update-comment@v1.4.5
         continue-on-error: true
+        env:
+          URL: https://api.ajr.dev/files/austin-rovge-resume-${{ github.event.number }}.pdf
         with:
           issue-number: ${{ github.event.number }}
           body: |
             Commit: ${{ github.event.pull_request.head.sha }}
-            ${{ https://api.ajr.dev/files/austin-rovge-resume-${{ github.event.number }}.pdf }}
+            ${{ URL }}
