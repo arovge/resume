@@ -5,7 +5,6 @@ on:
 jobs:
   delete_from_r2:
     name: Delete PDF from r2
-    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -16,9 +15,9 @@ jobs:
       - name: Make
         run: |
           make all
-      - id: upload_assets_r2
+      - id: delete_assets_r2
         env:
           API_KEY: ${{ secrets.API_KEY }}
-          URL: https://api.ajr.dev/files/austin-rovge-resume-${{ github.event.number }}.pdf
+          URL: https://api.ajr.dev/files/austin-rovge-resume-draft-${{ github.event.number }}.pdf
         run: |
           curl $URL -s -o /dev/null -f -X DELETE -H 'X-API-Key: '$API_KEY''

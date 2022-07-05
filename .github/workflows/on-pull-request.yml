@@ -19,8 +19,8 @@ jobs:
         with:
           name: resume
           path: austin-rovge-resume.pdf
-  upload_pr_pdf_to_r2:
-    name: Upload PR PDF
+  upload_draft_pdf_to_r2:
+    name: Upload draft PDF
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -30,15 +30,12 @@ jobs:
       - id: upload_assets_r2
         env:
           API_KEY: ${{ secrets.API_KEY }}
-          URL: https://api.ajr.dev/files/austin-rovge-resume-${{ github.event.number }}.pdf
+          URL: https://api.ajr.dev/files/austin-rovge-resume-draft-${{ github.event.number }}.pdf
         run: |
           curl $URL -s -o /dev/null -f -X PUT -H 'X-API-Key: '$API_KEY'' -H 'Content-Type: document' --data-binary @austin-rovge-resume.pdf
   add_link_to_pr_comment:
     name: Add comment
-    needs: upload_pr_pdf_to_r2
-    env:
-      SHA: ${{ github.event.pull_request.head.sha }}
-      URL: https://api.ajr.dev/files/austin-rovge-resume-${{ github.event.number }}.pdf
+    needs: upload_draft_pdf_to_r2
     runs-on: ubuntu-latest
     steps:
     - name: Find existing comment
@@ -57,4 +54,4 @@ jobs:
         body: |
             Built for commit ${{ github.event.pull_request.head.sha }}
 
-            https://api.ajr.dev/files/austin-rovge-resume-${{ github.event.number }}.pdf
+            <a href="https://api.ajr.dev/files/austin-rovge-resume-draft-${{ github.event.number }}.pdf" target="_blank">https://api.ajr.dev/files/austin-rovge-resume-draft-${{ github.event.number }}.pdf</a>
