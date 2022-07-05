@@ -6,12 +6,13 @@ on:
     tags-ignore:
       - '*'
 
+env:
+  DATA: ${{ github.event }}
+
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    env:
-      DATA: ${{ github.event }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
