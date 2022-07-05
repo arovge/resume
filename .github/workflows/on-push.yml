@@ -35,9 +35,8 @@ jobs:
           make all
       - id: upload_assets_r2
         env:
-          PR_ID: ${{ github.event.number }}
           API_KEY: ${{ secrets.API_KEY }}
-          URL: https://api.ajr.dev/files/austin-rovge-resume-'${{ PR_ID }}'.pdf
+          URL: https://api.ajr.dev/files/austin-rovge-resume-'${{ github.event.number }}'.pdf
         run: |
           curl '$url' -s -o /dev/null -f -X PUT -H 'X-API-Key: '$API_KEY''  -H 'Content-Type: document' --data-binary @austin-rovge-resume.pdf
   add_link_to_pr_comment:
@@ -51,7 +50,7 @@ jobs:
         continue-on-error: true
         env:
           SHA: ${{ github.event.pull_request.head.sha }}
-          URL: https://api.ajr.dev/files/austin-rovge-resume-'${{ PR_ID }}'.pdf
+          URL: https://api.ajr.dev/files/austin-rovge-resume-'${{ github.event.number }}'.pdf
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
