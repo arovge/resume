@@ -21,7 +21,7 @@ jobs:
           make all
   upload_pr_pdf_to_r2:
     name: Upload PR PDF
-    if: github.event.issue.pull_request
+    if: github.event_name == 'pull_request'
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -41,7 +41,6 @@ jobs:
           curl '$url' -s -o /dev/null -f -X PUT -H 'X-API-Key: '$API_KEY''  -H 'Content-Type: document' --data-binary @austin-rovge-resume.pdf
   add_link_to_pr_comment:
     name: Add comment
-    if: github.event.issue.pull_request
     needs: upload_pr_pdf_to_r2
     runs-on: ubuntu-latest
     steps:
