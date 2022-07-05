@@ -55,4 +55,5 @@ jobs:
           issue-number: ${{ github.event.number }}
           body: |
             Commit: ${{ github.event.pull_request.head.sha }}
-            $URL
+            ${{ $URL }}
+          edit-mode: replace
