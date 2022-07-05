@@ -1,0 +1,24 @@
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  delete_from_r2:
+    if: github.event.issue.pull_request
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install deps
+        run: |
+          sudo apt-get install -y texlive texlive-luatex texlive-latex-extra fonts-freefont-ttf
+      - name: Make
+        run: |
+          make all
+      - id: upload_assets_r2
+        env:
+          PR_ID: ${{ github.event.number }}
+          API_KEY: ${{ secrets.API_KEY }}
+          URL: https://api.ajr.dev/files/austin-rovge-resume-'${{ PR_ID }}'.pdf
+        run: |
+          curl '$url' -s -o /dev/null -f -X DELETE -H 'X-API-Key: '$API_KEY''  -H 'Content-Type: document' --data-binary @austin-rovge-resume.pdf

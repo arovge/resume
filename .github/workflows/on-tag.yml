@@ -7,7 +7,6 @@ name: Upload artifacts
 
 jobs:
   build:
-    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -27,8 +26,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Create Release
-        id: create_release
+      - id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -40,8 +38,7 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: resume
-      - name: Upload assets to release
-        id: upload_assets_release
+      - id: upload_assets_release
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -50,8 +47,7 @@ jobs:
           asset_path: ./austin-rovge-resume.pdf
           asset_name: austin-rovge-resume.pdf
           asset_content_type: application/pdf
-      - name: Upload assets to r2
-        id: upload_assets_r2
+      - id: upload_assets_r2
         env:
           API_KEY: ${{ secrets.API_KEY }}
         run: |
