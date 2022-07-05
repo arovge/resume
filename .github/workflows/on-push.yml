@@ -21,7 +21,7 @@ jobs:
           make all
   upload_pr_pdf_to_r2:
     name: Upload PR PDF
-    if: github.event_name == 'pull_request'
+    # if: github.event_name == 'pull_request'
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -29,6 +29,9 @@ jobs:
         uses: actions/checkout@v3
       - name: Install deps
         run: |
+          echo $github.event_name
+          echo $github
+          exit 1
           sudo apt-get install -y texlive texlive-luatex texlive-latex-extra fonts-freefont-ttf
       - name: Make
         run: |
