@@ -21,7 +21,7 @@ jobs:
         issue-number: ${{ github.event.number }}
         edit-mode: replace
         body: |
-            Building for commit ${{ github.event.pull_request.head.sha }}
+            Building new PDF for commit ${{ github.event.pull_request.head.sha }}
   build:
     name: Build
     runs-on: ubuntu-latest
