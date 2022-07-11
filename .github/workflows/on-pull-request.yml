@@ -3,6 +3,26 @@ on:
   pull_request
 
 jobs:
+  add_building_comment:
+    name: Add building comment
+    needs: upload_draft_pdf_to_r2
+    runs-on: ubuntu-latest
+    steps:
+    - name: Find existing comment
+      uses: peter-evans/find-comment@v2
+      id: find_comment
+      with:
+        issue-number: ${{ github.event.number }}
+        comment-author: 'github-actions[bot]'
+    - name: Update/add comment with remote link
+      uses: peter-evans/create-or-update-comment@v2
+      continue-on-error: true
+      with:
+        comment-id: ${{ steps.find_comment.outputs.comment-id }}
+        issue-number: ${{ github.event.number }}
+        edit-mode: replace
+        body: |
+            Building for commit ${{ github.event.pull_request.head.sha }}
   build:
     name: Build
     runs-on: ubuntu-latest
@@ -33,8 +53,8 @@ jobs:
           URL: https://api.ajr.dev/files/austin-rovge-resume-draft-${{ github.event.number }}.pdf
         run: |
           curl $URL -s -o /dev/null -f -X PUT -H 'X-API-Key: '$API_KEY'' -H 'Content-Type: document' --data-binary @austin-rovge-resume.pdf
-  add_link_to_pr_comment:
-    name: Add comment
+  link_pdf_to_pr_comment:
+    name: Link PDF to PR comment
     needs: upload_draft_pdf_to_r2
     runs-on: ubuntu-latest
     steps:
@@ -52,6 +72,4 @@ jobs:
         issue-number: ${{ github.event.number }}
         edit-mode: replace
         body: |
-            Built for commit ${{ github.event.pull_request.head.sha }}
-
             <a href="https://api.ajr.dev/files/austin-rovge-resume-draft-${{ github.event.number }}.pdf" target="_blank">https://api.ajr.dev/files/austin-rovge-resume-draft-${{ github.event.number }}.pdf</a>
