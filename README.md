@@ -35,9 +35,9 @@ When the PR is merged, the PDF is deleted from cloud storage.
 Run this locally:
 
 ```bash
- # Make sure we have the most up to date main so the tag is created with the correct repository history
- # Ideally we could create a tag via GitHubs interface but it seems like that would also create a release
- # We want actions to handle creating the release and uploading data to it
+# Make sure we have the most up to date main so the tag is created with the correct repository history
+# Ideally we could create a tag via GitHubs interface but it seems like that would also create a release
+# We want actions to handle creating the release and uploading data to it
 $ git checkout main
 $ git pull origin main
 
