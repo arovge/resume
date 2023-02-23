@@ -17,37 +17,21 @@ jobs:
       - name: Make
         run: |
           make all
-      - uses: actions/upload-artifact@v3
-        with:
-          name: resume
-          path: austin-rovge-resume.pdf
-  upload:
-    name: Upload
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - id: create_release
-        uses: actions/create-release@v1
+      - name: Get release
+        id: get_release
+        uses: bruceadams/get-release@v1.3.2
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
-      - uses: actions/download-artifact@v3
-        with:
-          name: resume
-      - id: upload_assets_release
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Upload release asset to GitHub
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          upload_url: ${{ steps.get_release.outputs.upload_url }}
           asset_path: ./austin-rovge-resume.pdf
           asset_name: austin-rovge-resume.pdf
           asset_content_type: application/pdf
-      - id: upload_assets_r2
+      - name: Upload release asset to api.ajr.dev
         env:
           API_KEY: ${{ secrets.API_KEY }}
         run: |
