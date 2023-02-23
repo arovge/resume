@@ -2,8 +2,8 @@ on:
   pull_request
 
 jobs:
-  add_building_comment:
-    name: Add building comment
+  add_comment:
+    name: Add building PDF comment
     runs-on: ubuntu-latest
     steps:
       - name: Find existing comment
@@ -12,7 +12,7 @@ jobs:
         with:
           issue-number: ${{ github.event.number }}
           comment-author: 'github-actions[bot]'
-      - name: Update/add comment with remote link
+      - name: Create/update comment with link
         uses: peter-evans/create-or-update-comment@v2
         continue-on-error: true
         with:
@@ -22,6 +22,7 @@ jobs:
           body: |
               Building new PDF for commit ${{ github.event.pull_request.head.sha }}
   build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -32,14 +33,14 @@ jobs:
       - name: Make
         run: |
           make all
-      - name: Upload asset to api.ajr.dev
+      - name: Upload asset to api
         env:
           API_KEY: ${{ secrets.API_KEY }}
           URL: https://api.ajr.dev/files/austin-rovge-resume-draft-${{ github.event.number }}.pdf
         run: |
           curl $URL -s -o /dev/null -f -X PUT -H 'X-API-Key: '$API_KEY'' -H 'Content-Type: document' --data-binary @austin-rovge-resume.pdf
-  link_pdf_to_pr_comment:
-    name: Link PDF to PR comment
+  link_pdf_to_comment:
+    name: Link PDF to comment
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -49,7 +50,7 @@ jobs:
       with:
         issue-number: ${{ github.event.number }}
         comment-author: 'github-actions[bot]'
-    - name: Update/add comment with remote link
+    - name: Create/update comment with link
       uses: peter-evans/create-or-update-comment@v2
       continue-on-error: true
       with:

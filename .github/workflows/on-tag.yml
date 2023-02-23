@@ -5,6 +5,7 @@ on:
 
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -20,7 +21,9 @@ jobs:
           name: resume
           path: austin-rovge-resume.pdf
   upload:
-    name: Upload release assets to GitHub/api.ajr.dev
+    # Something in here is causing this warning:
+    # The `set-output` command is deprecated and will be disabled soon. Please upgrade to using Environment Files. For more information see: https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
+    name: Upload assets
     runs-on: ubuntu-latest
     needs: build
     steps:
@@ -32,6 +35,7 @@ jobs:
         uses: bruceadams/get-release@v1.3.2
         env:
           GITHUB_TOKEN: ${{ github.token }}
+      # TODO: This is not maintained. This looks like the recommended replacement: https://github.com/softprops/action-gh-release
       - name: Upload release asset to GitHub
         uses: actions/upload-release-asset@v1
         env:
