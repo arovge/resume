@@ -15,18 +15,18 @@ jobs:
       - name: Make
         run: |
           make all
-     - uses: actions/upload-artifact@v3
-         with:
-           name: resume
-           path: austin-rovge-resume.pdf
+      - uses: actions/upload-artifact@v3
+        with:
+          name: resume
+          path: austin-rovge-resume.pdf
   upload:
     name: Upload release assets to GitHub/api.ajr.dev
     runs-on: ubuntu-latest
     needs: build
     steps:
       - uses: actions/download-artifact@v3
-         with:
-           name: resume
+        with:
+          name: resume
       - name: Get release
         id: get_release
         uses: bruceadams/get-release@v1.3.2
