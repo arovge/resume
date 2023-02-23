@@ -23,7 +23,6 @@ jobs:
         body: |
             Building new PDF for commit ${{ github.event.pull_request.head.sha }}
   build:
-    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -34,19 +33,7 @@ jobs:
       - name: Make
         run: |
           make all
-      - uses: actions/upload-artifact@v3
-        with:
-          name: resume
-          path: austin-rovge-resume.pdf
-  upload_draft_pdf_to_r2:
-    name: Upload draft PDF
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v3
-        with:
-          name: resume
-      - id: upload_assets_r2
+      - name: Upload asset to api.ajr.dev
         env:
           API_KEY: ${{ secrets.API_KEY }}
           URL: https://api.ajr.dev/files/austin-rovge-resume-draft-${{ github.event.number }}.pdf
@@ -54,7 +41,7 @@ jobs:
           curl $URL -s -o /dev/null -f -X PUT -H 'X-API-Key: '$API_KEY'' -H 'Content-Type: document' --data-binary @austin-rovge-resume.pdf
   link_pdf_to_pr_comment:
     name: Link PDF to PR comment
-    needs: upload_draft_pdf_to_r2
+    needs: build
     runs-on: ubuntu-latest
     steps:
     - name: Find existing comment
