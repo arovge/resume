@@ -32,18 +32,12 @@ When the PR is merged, the PDF is deleted from cloud storage.
 
 ### Release process
 
-Run this locally:
+Using the GitHub release interface:
 
-```bash
-# Make sure we have the most up to date main so the tag is created with the correct repository history
-# Ideally we could create a tag via GitHubs interface but it seems like that would also create a release
-# We want actions to handle creating the release and uploading data to it
-$ git checkout main
-$ git pull origin main
-
-$ git tag v0.0.0
-$ git push origin v0.0.0
-```
+1. Draft a new release
+2. Create a tag for the release
+    * This somewhat follows semver for how big the changes made are
+3. Generate release notes for the release
 
 This will kick off GitHub actions to:
 
