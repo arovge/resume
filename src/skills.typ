@@ -33,9 +33,9 @@
     sect_title("SKILLS")
     align(left,
         list(
-        indent: 0.25in,
-        [Technologies: ] + technologies,
-        [Tools: ] + tools
+            indent: 0.25in,
+            [Technologies: ] + technologies,
+            [Tools: ] + tools
         )
     )
     v(5pt)
