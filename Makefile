@@ -1,16 +1,11 @@
-DEPS = main.tex header.tex skills.tex experience.tex education.tex projects.tex
-PDF = austin-rovge-resume
+DEPS = src/*
+ENTRY = src/main.typ
+PDF = austin-rovge-resume.pdf
 
 all: $(PDF)
 
 $(PDF): $(DEPS)
-	lualatex --jobname=$(PDF) $(DEPS)
+	typst compile $(ENTRY) $(PDF)
 
 clean:
-	rm -f *.log
-	rm -f *.fdb_latexmk
-	rm -f *.fls
-	rm -f *.aux
-	rm -f *.out
-	rm -f *.pdf
-	rm -rf $(OUT)
+	rm -f $(PDF)
