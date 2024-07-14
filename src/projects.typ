@@ -1,7 +1,6 @@
 #import "template.typ": sect_title, sect
 
-#let projects = {
-    sect_title("MENTORSHIP & PROJECTS")
+#let first_mentor = {
     sect(
         "FIRST Mentor – Charger Robotics Team 537",
         "",
@@ -13,6 +12,9 @@
             "Instilled FIRST Core Values and Gracious Professionalism into high school students, helping develop skills and behaviors to promote a healthy environment for learning and fun."
         )
     )
+}
+
+#let sdl = {
     sect(
         "Fluoroscopy Simulator – Medical College of Wisconsin",
         "",
@@ -23,4 +25,10 @@
             "Created test suite with unit and end-to-end tests running in GitLab CI as Docker containers for consistent, reproducible tests to catch any issues from any end of the application."
         )
     )
+}
+
+#let projects = {
+    sect_title("MENTORSHIP & PROJECTS")
+    first_mentor
+    sdl
 }
