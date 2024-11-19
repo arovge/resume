@@ -29,6 +29,9 @@ jobs:
         uses: typst-community/setup-typst@v3
         with:
           typst-version: 0.12
+      - name: Check fonts
+        run: |
+          typst fonts
       - name: Make
         run: |
           make all
