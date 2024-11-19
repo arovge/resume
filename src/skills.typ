@@ -31,6 +31,7 @@
 
 #let skills = {
     section_title("SKILLS")
+    v(-5pt)
     align(left,
         list(
             indent: 0.25in,
