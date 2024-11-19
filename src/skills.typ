@@ -1,4 +1,4 @@
-#import "template.typ": sect_title
+#import "template.typ": section_title
 
 #let technologies = (
     "C#",
@@ -30,7 +30,7 @@
 ).join(", ")
 
 #let skills = {
-    sect_title("SKILLS")
+    section_title("SKILLS")
     align(left,
         list(
             indent: 0.25in,

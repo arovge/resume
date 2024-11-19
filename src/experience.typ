@@ -1,7 +1,7 @@
-#import "template.typ": sect_title, sect
+#import "template.typ": section_title, section
 
 #let ds = {
-    sect(
+    section(
         ("Senior Software Engineer", "Software Engineer", "Software Engineer Intern").join("\n"),
         "Direct Supply",
         ("March 2024 – Present", "June 2021 – March 2024", "June 2019 – June 2021").join("\n"),
@@ -15,7 +15,7 @@
 }
 
 #let rebentify = {
-    sect(
+    section(
         "Consultant",
         "Rebentify Technologies",
         "July 2021 – October 2021",
@@ -29,7 +29,7 @@
 }
 
 #let experience = {
-    sect_title("EXPERIENCE")
+    section_title("EXPERIENCE")
     ds
     rebentify
 }

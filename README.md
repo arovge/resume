@@ -8,6 +8,10 @@ No clue. Hopefully parseable, otherwise I wasted a lot of time on this. I'll upd
 
 ### Local Development
 
+Typst is required. It's installation guide can be found in [the typst/typst GitHub repository](https://github.com/typst/typst?tab=readme-ov-file#installation).
+
+TODO(typst): Below is deprecated
+
 Make sure you have LaTeX dependencies installed as well as the LuaTeX engine. The resume uses `FreeSerif` as its font so `GNU FreeFont` should also be installed.
 
 To build, your system will need to have `GNU Make` to use make files.
