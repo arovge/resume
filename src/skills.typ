@@ -14,7 +14,7 @@
     "SwiftUI",
     "Terraform",
     "TypeScript"
-).join(", ")
+).sorted().join(", ")
 
 #let tools = (
     "Adobe XD",
@@ -27,7 +27,7 @@
     "GitHub Actions",
     "GitLab CI",
     "Xcode"
-).join(", ")
+).sorted().join(", ")
 
 #let skills = {
     section_title("SKILLS")
