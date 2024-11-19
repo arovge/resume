@@ -1,7 +1,7 @@
-#import "template.typ": sect_title, sect
+#import "template.typ": section_title, section
 
 #let first_mentor = {
-    sect(
+    section(
         "FIRST Mentor – Charger Robotics Team 537",
         "",
         "October 2021 – Present",
@@ -15,7 +15,7 @@
 }
 
 #let sdl = {
-    sect(
+    section(
         "Fluoroscopy Simulator – Medical College of Wisconsin",
         "",
         "September 2019 – May 2020",
@@ -28,7 +28,7 @@
 }
 
 #let projects = {
-    sect_title("MENTORSHIP & PROJECTS")
+    section_title("MENTORSHIP & PROJECTS")
     first_mentor
     sdl
 }
