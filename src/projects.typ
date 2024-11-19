@@ -4,11 +4,10 @@
     section(
         "FIRST Mentor – Charger Robotics Team 537",
         "",
-        "October 2021 – Present",
+        "October 2021 – May 2023",
         "",
         bullets: (
-            "Taught programming concepts and problem solving skills to students, equipping them to continue learning independently and to contribute to the robot’s codebase.",
-            "Liaised between senior mentors, department leaders and students to foster an environment of open communication, learning and community, resulting in a well-informed, close-knit team and high morale.",
+            "Taught programming concepts and problem solving skills, enabling students to independently learn and contribute to the robot’s codebase.",
             "Instilled FIRST Core Values and Gracious Professionalism into high school students, helping develop skills and behaviors to promote a healthy environment for learning and fun."
         )
     )
