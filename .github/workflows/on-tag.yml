@@ -11,6 +11,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup typst
         uses: typst-community/setup-typst@v3
+        with:
+          typst-version: 0.12
       - name: Install deps
         run: |
           sudo apt-get install -y texlive texlive-luatex texlive-latex-extra fonts-freefont-ttf
