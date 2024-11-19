@@ -1,7 +1,7 @@
-#import "template.typ": sect_title, sect
+#import "template.typ": section_title, section
 
 #let msoe = {
-    sect(
+    section(
         "Milwaukee School of Engineering",
         ("B.S. Software Engineering", "Minor in User Experience").join("\n"),
         "September 2017 – May 2021",
@@ -10,6 +10,6 @@
 }
 
 #let education = {
-    sect_title("EDUCATION")
+    section_title("EDUCATION")
     msoe
 }
