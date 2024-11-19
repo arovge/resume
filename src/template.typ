@@ -34,6 +34,7 @@
             #location
         ]
     )
+    v(-5pt)
     if bullets.len() > 0 {
         list(indent: 0.25in, ..bullets)
     }
