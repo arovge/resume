@@ -26,7 +26,7 @@ $ make clean
 
 ### Pull Requests
 
-On each pull request, CI will run and make sure that the PDF can be successfully built. It will also upload the new PDF to cloud storage and add a comment with a conveinient link to the built PDF for easy viewing.
+On each pull request, CI will run and make sure that the PDF can be successfully built. It will also upload the new PDF to cloud storage and add a comment with a convenient link to the built PDF for easy viewing.
 
 When the PR is merged, the PDF is deleted from cloud storage.
 
