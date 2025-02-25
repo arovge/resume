@@ -23,8 +23,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
       - name: Setup typst
         uses: typst-community/setup-typst@v3
         with:
@@ -61,3 +60,10 @@ jobs:
           edit-mode: replace
           body: |
             <a href="https://api.ajr.dev/files/austin-rovge-resume-draft-${{ github.event.number }}.pdf" target="_blank">https://api.ajr.dev/files/austin-rovge-resume-draft-${{ github.event.number }}.pdf</a>
+  typos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check for typos
+        uses: crate-ci/typos@v1.29.9
