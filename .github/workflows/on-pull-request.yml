@@ -1,8 +1,8 @@
 on: pull_request
 
 jobs:
-  add_building_comment:
-    name: Add building comment
+  add_build_comment:
+    name: Add build comment
     runs-on: ubuntu-latest
     steps:
       - name: Find existing comment
@@ -28,9 +28,6 @@ jobs:
         uses: typst-community/setup-typst@v3
         with:
           typst-version: 0.12
-      - name: Check fonts
-        run: |
-          typst fonts
       - name: Make
         run: |
           make all
@@ -40,8 +37,8 @@ jobs:
           URL: https://api.ajr.dev/files/austin-rovge-resume-draft-${{ github.event.number }}.pdf
         run: |
           curl $URL -s -o /dev/null -f -X PUT -H 'X-API-Key: '$API_KEY'' -H 'Content-Type: document' --data-binary @austin-rovge-resume.pdf
-  link_pdf_to_pr_comment:
-    name: Link PDF to PR comment
+  comment_pdf_link:
+    name: Comment PDF link
     needs: build
     runs-on: ubuntu-latest
     steps:
