@@ -4,10 +4,10 @@ on:
 
 jobs:
   delete_from_api:
-    name: Delete PDF from api.ajr.dev
+    name: Delete artifact from api.ajr.dev
     runs-on: ubuntu-latest
     steps:
-      - name: Delete asset from api.ajr.dev
+      - name: Delete artifact from api.ajr.dev
         env:
           API_KEY: ${{ secrets.API_KEY }}
           URL: https://api.ajr.dev/files/austin-rovge-resume-draft-${{ github.event.number }}.pdf
