@@ -7,7 +7,7 @@
 #set page(width: 8.5in, height: 11in, margin: (top: 0.625in, x: 0.625in))
 
 #header
-#skills
 #experience
 #projects
 #education
+#skills
