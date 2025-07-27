@@ -3,7 +3,7 @@
 #let first_mentor = {
     section(
         "FIRST Mentor",
-        org: " Charger Robotics Team 537",
+        org: "Charger Robotics Team 537",
         "October 2021 – May 2023",
         bullets: (
             "Taught programming concepts and problem solving skills, enabling students to independently learn and contribute to the robot’s codebase.",
