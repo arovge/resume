@@ -25,7 +25,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Setup typst
-        uses: typst-community/setup-typst@v3
+        uses: typst-community/setup-typst@v4.2
         with:
           typst-version: 0.12
       - name: Make
@@ -63,4 +63,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Check for typos
-        uses: crate-ci/typos@v1.29.9
+        uses: crate-ci/typos@v1.34.0
