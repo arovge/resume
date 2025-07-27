@@ -21,17 +21,23 @@
     v(-7.5pt)
 }
 
-#let section(title, company, duration, location, bullets: ()) = {
+#let fmt-title(title, org) = {
+  if org.len() > 0 {
+    title + ", " + org
+  } else {
+    title
+  }
+}
+
+#let section(title, org: "", duration, bullets: ()) = {
     v(-5pt)
     grid(
-        columns: (3fr, 3fr),
+        columns: (4fr, 2fr),
         align(left)[
-            #title \
-            #company
+            #fmt-title(title, org)
         ],
         align(right)[
-            #duration \
-            #location
+            #duration
         ]
     )
     v(-5pt)
