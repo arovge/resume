@@ -8,19 +8,6 @@
     )
 }
 
-#let section_col(l_value, r_value) = {
-    grid(
-        columns: (3fr, 3fr),
-        align(left)[
-            #l_value
-        ],
-        align(right)[
-            #r_value
-        ]
-    )
-    v(-7.5pt)
-}
-
 #let fmt-title(title, org) = {
   if org.len() > 0 {
     title + ", " + org
