@@ -1,13 +1,13 @@
 #import "template.typ": section_title
 
-#let technologies = (
+#let tech = (
     "C#",
     "Go",
     "Java",
+    "Jetpack Compose",
     "Kotlin",
-    "Node",
+    "Node.js",
     "React",
-    "Redux",
     "Rust",
     "SQL",
     "Swift",
@@ -17,11 +17,11 @@
 ).sorted().join(", ")
 
 #let tools = (
-    "Adobe XD",
     "AWS",
+    "Claude Code",
     "Cloudflare",
+    "Cursor",
     "Docker",
-    "Firebase",
     "GCP",
     "Git",
     "GitHub Actions",
@@ -35,7 +35,7 @@
     align(left,
         list(
             indent: 0.25in,
-            [Technologies: ] + technologies,
+            [Tech: ] + tech,
             [Tools: ] + tools
         )
     )
