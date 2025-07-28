@@ -2,7 +2,7 @@
 
 #let msoe = {
     section(
-        "Milwaukee School of Engineering\nB.S. Software Engineering. Minor in User Experience",
+        "Milwaukee School of Engineering\nB.S. Software Engineering, Minor in User Experience",
         "Graduated May 2021"
     )
 }
