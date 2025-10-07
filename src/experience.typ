@@ -6,7 +6,8 @@
         org: "Direct Supply",
         "March 2024 – Present",
         bullets: (
-            "TODO",
+            "Developed an LLM-powered AI feature that summarized years of historical facility reports, significantly reducing user preparation time, and proactively clarified inspection priorities before walk-throughs.",
+            "Led the development of a PoC for an LLM-powered solution that completely automated a complex, manual image ingestion workflow. This automation recaptured an estimated 24 hours of human labor per cycle, significantly improving data accuracy and allowing staff to shift focus to core strategic priorities."
         )
     )
 }
