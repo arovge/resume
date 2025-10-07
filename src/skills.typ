@@ -3,7 +3,7 @@
 -- FUTURE:
 -- .sorted() currently (0.13.1) has no way to
 -- do a case-insensitive sort.
--- Which leads to 'AWS' preceeding 'Android Studio'.
+-- Which leads to 'AWS' preceding 'Android Studio'.
 -- When touching this again, check to see if this functionality
 -- is now available. Else, be careful with ordering.
 #let tech = (
@@ -26,7 +26,7 @@
 -- FUTURE:
 -- .sorted() currently (0.13.1) has no way to
 -- do a case-insensitive sort.
--- Which leads to 'AWS' preceeding 'Android Studio'.
+-- Which leads to 'AWS' preceding 'Android Studio'.
 -- When touching this again, check to see if this functionality
 -- is now available. Else, be careful with ordering.
 #let tools = (
