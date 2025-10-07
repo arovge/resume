@@ -1,6 +1,13 @@
 #import "template.typ": section_title
 
+-- FUTURE:
+-- .sorted() currently (0.13.1) has no way to
+-- do a case-insensitive sort.
+-- Which leads to 'AWS' preceeding 'Android Studio'.
+-- When touching this again, check to see if this functionality
+-- is now available. Else, be careful with ordering.
 #let tech = (
+    "C",
     "C#",
     "Go",
     "Java",
@@ -14,9 +21,16 @@
     "SwiftUI",
     "Terraform",
     "TypeScript"
-).sorted().join(", ")
+).sorted(key: it => it).join(", ")
 
+-- FUTURE:
+-- .sorted() currently (0.13.1) has no way to
+-- do a case-insensitive sort.
+-- Which leads to 'AWS' preceeding 'Android Studio'.
+-- When touching this again, check to see if this functionality
+-- is now available. Else, be careful with ordering.
 #let tools = (
+    "Android Studio",
     "AWS",
     "Claude Code",
     "Cloudflare",
@@ -27,16 +41,16 @@
     "GitHub Actions",
     "GitLab CI",
     "Xcode"
-).sorted().join(", ")
+).join(", ")
 
 #let skills = {
-    section_title("SKILLS")
+    section_title("TECH & TOOLS")
     v(-5pt)
     align(left,
         list(
             indent: 0.25in,
-            [Tech: ] + tech,
-            [Tools: ] + tools
+            tech,
+            tools
         )
     )
     v(5pt)
