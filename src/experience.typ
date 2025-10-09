@@ -24,6 +24,19 @@
     )
 }
 
+#let edlastics = {
+    section(
+        "Full-Stack Engineer (Contract)",
+        org: "Edlastics",
+        "July 2021 – October 2021",
+        bullets: (
+            "Configured GCP Cloud Run and Firebase staging/production environments for secure, reproducible deployments by leveraging a single Docker image and config-based changes.",
+            "Integrated Google Sign-In, enabling users to use their existing organization credentials to improve security and reduce organizational risk.",
+            "Added client and server logging to proactively identify and prioritize bug fixes, decreasing average issue resolution time by 3 days."
+        )
+    )
+}
+
 #let ds_intern = {
     section(
         "Software Engineer Intern",
@@ -36,27 +49,10 @@
     )
 }
 
-#let ds = {
-    ds_senior
-    ds_swe
-    ds_intern
-}
-
-#let rebentify = {
-    section(
-        "Consultant",
-        org: "Edlastics",
-        "July 2021 – October 2021",
-        bullets: (
-            "Configured GCP Cloud Run and Firebase staging/production environments for secure, reproducible deployments by leveraging a single Docker image and config-based changes.",
-            "Integrated Google Sign-In, enabling users to use their existing organization credentials to improve security and reduce organizational risk.",
-            "Added client and server logging to proactively identify and prioritize bug fixes, decreasing average issue resolution time by 3 days."
-        )
-    )
-}
-
 #let experience = {
     section_title("EXPERIENCE")
-    ds
-    rebentify
+    ds_senior
+    ds_swe
+    edlastics
+    ds_intern
 }
