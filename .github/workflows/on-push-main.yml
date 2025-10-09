@@ -11,7 +11,7 @@ jobs:
       - name: Setup typst
         uses: typst-community/setup-typst@v4.2
         with:
-          typst-version: 0.12
+          typst-version: 0.13.1
       - name: Make
         run: |
           make all
