@@ -27,8 +27,8 @@
             #duration
         ]
     )
-    v(-5pt)
     if bullets.len() > 0 {
+        v(-5pt)
         list(indent: 0.25in, ..bullets)
     }
     v(5pt)
