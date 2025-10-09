@@ -6,8 +6,8 @@
         org: "Direct Supply",
         "March 2024 – Present",
         bullets: (
-            "Developed an LLM-powered AI feature that summarized years of historical facility reports, significantly reducing user preparation time, and proactively clarified inspection priorities before walk-throughs.",
-            "Led the development of a PoC for an LLM-powered solution that completely automated a complex, manual image ingestion workflow. This automation recaptured an estimated 24 hours of human labor per cycle, significantly improving data accuracy and allowing staff to shift focus to core strategic priorities."
+            "Pioneered an LLM-driven proof-of-concept to fully automate a complex image ingestion workflow, delivering 8 hours of labor savings per day and lowering customer delays by up to 24 hours. This improvement significantly increased data accuracy and redirected operational staff to strategic priorities.",
+            "Developed an AI-enhanced system for summarizing historical facility reports, enabling users to proactively clarify inspection priorities and reduce preparation time for critical facility walk-throughs."
         )
     )
 }
@@ -30,7 +30,7 @@
         org: "Edlastics",
         "July 2021 – October 2021",
         bullets: (
-            "Configured GCP Cloud Run and Firebase staging/production environments for secure, reproducible deployments by leveraging a single Docker image and config-based changes.",
+            "Configured GCP Cloud Run and Firebase staging/production environments for secure, reproducible deployments by leveraging a single Docker image and config-based changes for a several microservices.",
             "Integrated Google Sign-In, enabling users to use their existing organization credentials to improve security and reduce organizational risk.",
             "Added client and server logging to proactively identify and prioritize bug fixes, decreasing average issue resolution time by 3 days."
         )
