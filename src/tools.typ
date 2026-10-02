@@ -51,7 +51,7 @@
     "Fastlane",
     "Jetpack Compose",
     "Kotlin",
-    "React Native"
+    "React Native",
     "Swift",
     "SwiftUI",
     "Xcode"
