@@ -9,6 +9,7 @@
 #let tech = "Tech: " + (
     "C",
     "C#",
+    "Docker",
     "Go",
     "Java",
     ".NET",
@@ -31,7 +32,6 @@
     "Codex",
     "Claude Code",
     "Cloudflare",
-    "Docker",
     "Google Cloud",
     "Git",
     "GitHub Actions",
