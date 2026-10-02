@@ -9,7 +9,7 @@
             "Automated image ingestion by pioneering an LLM proof-of-concept, saving 2,000+ hours of annual labor and cutting customer delays by 24 hours while eliminating legacy batch jobs to simplify the data pipeline.",
             "Developed an AI system for summarizing historical reports, streamlining preparation for critical facility inspections, allowing users to quickly focus on recurring issues from previous reports.",
             "Paired with junior engineers and interns to develop their problem-solving and debugging skills with AWS microservices, enabling them to independently contribute to sprint work.",
-            "Accelerated mobile development velocity by leading the migration of native SwiftUI/Jetpack Compose apps to React Native in just 2.5 months using Claude Code; eliminated platform-specific logic discrepancy bugs and unified the cross-platform codebase."
+            "Led the migration of native SwiftUI/Jetpack Compose mobile apps to React Native in 2.5 months using Claude Code, eliminating logic discrepancy bugs and unifying the platform codebases."
         )
     )
 }
