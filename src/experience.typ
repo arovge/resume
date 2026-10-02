@@ -20,7 +20,7 @@
         "June 2021 – March 2024",
         bullets: (
             "Researched and migrated the iOS app to use Swift structured concurrency, reducing the 90-day crash rate by ~94% (from ~2,200 to ~130 crashes), significantly improving stability for ~35k monthly active users.",
-            "Modernized SMS/email delivery systems with alerting/monitoring, minimized spam risk, and engineered redundant delivery mechanisms to ensure 99.9% availability, preventing communication outages for business-critical processes."
+            "Modernized SMS/email delivery systems with alerting/monitoring, minimizing spam risk, and engineering redundant delivery mechanisms to ensure 99.9% availability for critical business communications."
         )
     )
 }
