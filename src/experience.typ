@@ -6,7 +6,7 @@
         org: "Direct Supply",
         "March 2024 – Present",
         bullets: (
-            "Pioneered an LLM-driven proof-of-concept to fully automate a complex image ingestion workflow, delivering 8 hours of labor savings per day and lowering customer delays by up to 24 hours. This improvement significantly increased data accuracy and redirected operational staff to strategic priorities.",
+            "Automated image ingestion by pioneering an LLM proof-of-concept, saving 2,000+ hours of annual labor and cutting customer delays by 24 hours while eliminating legacy batch jobs to simplify the data pipeline.",
             "Developed an AI system for summarizing historical reports, streamlining preparation for critical facility inspections, allowing users to quickly focus on recurring issues from previous reports.",
             "Paired with junior engineers and interns to develop their problem-solving and debugging skills with AWS microservices, enabling them to independently contribute to sprint work."
         )
