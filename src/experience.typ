@@ -47,7 +47,8 @@
         "June 2019 – June 2021",
         bullets: (
             "Built greenfield SwiftUI iOS app to replace legacy Xamarin app, massively cutting development/deployment time from a few days to a few hours, and added detailed logging and user action replay for monitoring.",
-            "Containerized legacy .NET services from shared EC2 Windows instances to serverless Linux containers via AWS ECS, lowering maintenance costs and reducing deployment time from 90 minutes to 5 minutes."
+            "Eliminated Windows-specific dependencies from legacy .NET Framework services, systematically preparing the monolithic codebase for .NET Core migration.",
+            "Containerized .NET services from shared EC2 Windows instances to serverless Linux containers via AWS ECS, lowering maintenance costs and reducing deployment time from 90 minutes to 5 minutes."
         )
     )
 }
