@@ -7,7 +7,8 @@
         "March 2024 – Present",
         bullets: (
             "Pioneered an LLM-driven proof-of-concept to fully automate a complex image ingestion workflow, delivering 8 hours of labor savings per day and lowering customer delays by up to 24 hours. This improvement significantly increased data accuracy and redirected operational staff to strategic priorities.",
-            "Developed an AI system for summarizing historical reports, streamlining preparation for critical facility inspections, allowing users to quickly focus on recurring issues from previous reports."
+            "Developed an AI system for summarizing historical reports, streamlining preparation for critical facility inspections, allowing users to quickly focus on recurring issues from previous reports.",
+            "Paired with junior engineers and interns to develop their problem-solving and debugging skills with AWS microservices, enabling them to independently contribute to sprint work."
         )
     )
 }
