@@ -6,15 +6,16 @@
 // preceding 'Android Studio'. When touching this again,
 // check to see if this functionality is now available.
 // Else, be careful with ordering.
-#let tech = (
+#let tech = "Tech: " + (
     "C",
     "C#",
     "Go",
     "Java",
+    ".NET",
     "Node.js",
+    "PostgreSQL/SQL",
     "React",
     "Rust",
-    "SQL",
     "Terraform",
     "TypeScript"
 ).sorted(key: it => it).join(", ")
@@ -47,6 +48,7 @@
 #let mobile = "Mobile: " + (
     "Android Studio",
     "Expo",
+    "Fastlane",
     "Jetpack Compose",
     "Kotlin",
     "React Native"
@@ -55,7 +57,7 @@
     "Xcode"
 ).join(", ")
 
-#let tools = {
+#let tech_tools = {
     section_title("TECH & TOOLS")
     v(-5pt)
     align(left,
