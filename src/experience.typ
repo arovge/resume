@@ -22,7 +22,7 @@
         bullets: (
             "Researched and migrated the iOS app to use Swift structured concurrency, reducing the 90-day crash rate by ~94% (from ~2,200 to ~130 crashes), significantly improving stability for ~35k monthly active users.",
             "Modernized SMS/email delivery systems with alerting/monitoring, minimizing spam risk, and engineering redundant delivery mechanisms to ensure 99.9% availability for critical business communications.",
-            "Transitioned a crash-prone VB6 admin tool to an AWS CloudFront-hosted React SPA, saving the operations team ~2 hours daily and accelerating customer resolution."
+            "Transitioned an unmaintainable, crash-prone VB6 tool to an AWS CloudFront-hosted React SPA, saving the operations team ~2 hours daily and accelerating customer resolution."
         )
     )
 }
