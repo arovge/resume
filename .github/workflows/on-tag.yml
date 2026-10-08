@@ -7,11 +7,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7.0.1
       - name: Setup typst
-        uses: typst-community/setup-typst@v4.2
+        uses: typst-community/setup-typst@v5.3
         with:
-          typst-version: 0.13.1
+          typst-version: 0.15.1
       - name: Make
         run: |
           make all
