@@ -49,6 +49,7 @@
     "Android Studio",
     "Expo",
     "Fastlane",
+    "Firebase",
     "Jetpack Compose",
     "Kotlin",
     "React Native",
