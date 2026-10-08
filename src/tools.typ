@@ -1,11 +1,5 @@
 #import "template.typ": section_title
 
-// FUTURE:
-// Typst currently (0.13.1) has no way to do a
-// case-insensitive sort. This leads to 'AWS'
-// preceding 'Android Studio'. When touching this again,
-// check to see if this functionality is now available.
-// Else, be careful with ordering.
 #let tech = "Tech: " + (
     "C",
     "C#",
@@ -19,14 +13,8 @@
     "Rust",
     "Terraform",
     "TypeScript"
-).sorted(key: it => it).join(", ")
+).sorted(key: it => lower(it)).join(", ")
 
-// FUTURE:
-// Typst currently (0.13.1) has no way to do a
-// case-insensitive sort. This leads to 'AWS'
-// preceding 'Android Studio'. When touching this again,
-// check to see if this functionality is now available.
-// Else, be careful with ordering.
 #let tools = "Tools: " + (
     "AWS",
     "Codex",
@@ -37,14 +25,8 @@
     "GitHub Actions",
     "GitLab CI",
     "GitHub Copilot"
-).join(", ")
+).sorted(key: it => lower(it)).join(", ")
 
-// FUTURE:
-// Typst currently (0.13.1) has no way to do a
-// case-insensitive sort. This leads to 'AWS'
-// preceding 'Android Studio'. When touching this again,
-// check to see if this functionality is now available.
-// Else, be careful with ordering.
 #let mobile = "Mobile: " + (
     "Android Studio",
     "Expo",
@@ -56,7 +38,7 @@
     "Swift",
     "SwiftUI",
     "Xcode"
-).join(", ")
+).sorted(key: it => lower(it)).join(", ")
 
 #let tech_tools = {
     section_title("TECH & TOOLS")
